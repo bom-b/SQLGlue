@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SQLGlue</title>
+    <link rel="stylesheet" href="./public/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="./public/stylesheets/global-style.css">
+</head>
+<style>
+    #toggleButton {
+        height: 30px;
+        width: 40px;
+        padding: 0;
+        margin-left: 10px;
+    }
+
+    #setting-container {
+        padding: 40px 10px;
+        border: 1px solid #1e1f22;
+    }
+</style>
+<body>
+<div id="container" >
+    <div id="title-div">
+        <div class="drag-region">
+            <a href="index.html" style="-webkit-app-region: none;">
+<!--                <img src="./public/images/logo.png" style="width: 35px;">-->
+                <img src="./public/images/title.png" style="width: 100px;">
+            </a>
+        </div>
+        <div>
+            <img id="closeIcon" class="selectable" src="./public/icons/x-wht.svg" alt="Gear Icon" width="20" style="margin-left: 15px; cursor: pointer;">
+        </div>
+    </div>
+    <div style="padding: 20px; margin-top: 10px; height: 100vh; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+            <h2 style="margin-bottom: 40px; color: rgba(246, 246, 246, 0.64);">환경설정</h2>
+            <div style="display: flex; align-items: center; padding: 20px 10px;">
+                <p class="">알림 활성화</p>
+                <button id="toggleButton" class="btn-gray">ON</button>
+            </div>
+            <div style="display: flex; align-items: center; padding: 0 10px;">
+                <label for="shortcut" style="">실행 단축키 : </label>
+                <input id="shortcut" class="form-control2" style="margin-left: 20px; width: 200px;" readonly>
+            </div>
+            <div id="setting-container" style=" margin-top: 50px;">
+                <div style="display: flex; align-items: center;">
+                    <label for="query" style="width: 180px;">쿼리 인식 문자열 : </label>
+                    <input id="query" class="form-control2" style="margin-left: 20px; width: 250px;">
+                </div>
+                <div style="display: flex; align-items: center; margin-top: 10px;">
+                    <label for="param" style="width: 180px;">파라미터 인식 문자열 : </label>
+                    <input id="param" class="form-control2" style="margin-left: 20px; width: 250px;">
+                </div>
+            </div>
+        </div>
+        <div class="mt-2" style="display: flex; align-items: flex-end; justify-content: space-between;">
+            <div>
+                <p id="message"></p>
+            </div>
+            <div>
+                <button class="btn-signature" onclick="saveSetting()">저장</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="./public/javascripts/bootstrap.bundle.min.js"></script>
+<script src="./public/javascripts/common.js"></script>
+<script src="./public/javascripts/setting.js"></script>
+<script src="./public/javascripts/clipboard.js"></script>
+</body>
+</html>

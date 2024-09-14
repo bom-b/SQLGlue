@@ -1,0 +1,60 @@
+{
+  "name": "sqlglue",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "cross-env NODE_ENV=dev electron .",
+    "build": "cross-env NODE_ENV=production electron-builder"
+  },
+  "build": {
+    "appId": "SQLGlue",
+    "productName": "SQLGlue",
+    "asar": true,
+    "compression": "maximum",
+    "win": {
+      "target": "nsis",
+      "icon": "icon.ico",
+      "compression": "maximum"
+    },
+    "files": [
+      "public/**/*",
+      "main.js",
+      "index.html",
+      "settings.html",
+      "icon.ico",
+      "tray.ico",
+      "node_modules/ejs/**/*",
+      "node_modules/sql-formatter-plus/**/*",
+      "!**/node_modules/*/{CHANGELOG.md,README.md,README,readme.md,readme}",
+      "!**/node_modules/*/{test,__tests__,tests,powered-test,example,examples}",
+      "!**/node_modules/*.d.ts",
+      "!**/node_modules/.bin",
+      "!**/*.{iml,o,hprof,orig,pyc,pyo,rbc,swp,csproj,sln,xproj}",
+      "!.editorconfig",
+      "!**/._*",
+      "!**/{.DS_Store,.git,.hg,.svn,CVS,RCS,SCCS,.gitignore,.gitattributes}",
+      "!**/{__pycache__,thumbs.db,.flowconfig,.idea,.vs,.nyc_output}",
+      "!**/{appveyor.yml,.travis.yml,circle.yml}",
+      "!**/{npm-debug.log,yarn.lock,.yarn-integrity,.yarn-metadata.json}"
+    ],
+    "directories": {
+      "output": "out"
+    }
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "sql-formatter-plus": "^1.3.6"
+  },
+  "main": "main.js",
+  "keywords": [],
+  "author": "coding_choonsik",
+  "license": "ISC",
+  "description": "SQLGlue",
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "electron": "^32.0.2",
+    "electron-builder": "^25.0.5",
+    "electron-packager": "^17.1.2",
+    "electron-reload": "^2.0.0-alpha.1"
+  }
+}
